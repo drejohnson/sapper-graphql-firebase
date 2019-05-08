@@ -18,6 +18,7 @@
 
 ## Deploy
 
+- Uses [now-sapper](https://github.com/thgh/now-sapper)
 - To deploy on Now v2: run `yarn deploy` or `npm run deploy`,
 
 ## TODO
