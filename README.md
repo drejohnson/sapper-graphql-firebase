@@ -16,6 +16,12 @@
 - For dev server: run `yarn dev` or `npm run dev`, from project root. The app should be running at: http://localhost:3000.
 - To build frontend run: `yarn build` or `npm run build` from project root. Run `yarn start` or `npm start` to start app.
 
+# Notes
+
+- Repo was set up using my personal Hasura and Firebase configurations which is not included. So some setup is required for this repo to work for you.
+- You will need to edit the `.env` file to add your credentials
+- You also need to update the graphql directory with your own queries and mutations
+
 ## Deploy
 
 - Uses [now-sapper](https://github.com/thgh/now-sapper)
