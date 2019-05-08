@@ -5,4 +5,5 @@ yarn-error.log
 /__sapper__/
 firebaseConfig.js
 .env
+.firebaserc
 serviceAccountKey.json
