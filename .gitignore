@@ -3,7 +3,7 @@ node_modules
 yarn-error.log
 /cypress/screenshots/
 /__sapper__/
-firebaseConfig.js
+src/firebase/config.js
 .env
 .firebaserc
 serviceAccountKey.json
