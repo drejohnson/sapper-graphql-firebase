@@ -6,8 +6,8 @@ export const createQuery = () => {
 
   return {
     subscribe,
-    useQuery: async (query, variable) => {
-      const { data } = await request(query, variable)
+    useQuery: async query => {
+      const { data } = await request(query)
       set(data)
     },
   }
