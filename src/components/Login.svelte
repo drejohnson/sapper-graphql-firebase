@@ -1,15 +1,16 @@
 <script>
-  import { authState, signInWithGoogle, signOut } from '../stores/auth';
-  import Profile from './Profile.svelte';
+  import { signOut } from '../firebase/auth'
+  import { authStore } from '../stores/auth'
+  import Profile from './Profile.svelte'
+  import SignInButton from './SignInButton.svelte'
 </script>
 
 <section>
-  {#if $authState.status === 'logged-in'}
-    <Profile {...$authState.user} />
+  {#if $authStore.status === 'in'}
+    <Profile {...$authStore.user} />
     <button on:click={signOut}>Logout</button>
   {:else}
-  <button on:click={signInWithGoogle}>
-    Sign in with Google
-  </button>
+    <SignInButton provider={'google'} />
+    <SignInButton provider={'facebook'} />
   {/if}
 </section>
