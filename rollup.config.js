@@ -7,6 +7,7 @@ import { terser } from 'rollup-plugin-terser'
 import config from 'sapper/config/rollup.js'
 import dotenv from 'dotenv'
 import pkg from './package.json'
+import autoPreprocess from 'svelte-preprocess'
 
 const env = dotenv.config().parsed
 
@@ -14,6 +15,30 @@ const envKeys = Object.keys(env).reduce((prev, next) => {
   prev[`process.env.${next}`] = JSON.stringify(env[next])
   return prev
 }, {})
+
+const preprocess = autoPreprocess({
+  transformers: {
+    scss: { sourceMap: false },
+    postcss: {
+      plugins: [
+        require('postcss-import'),
+        require('postcss-preset-env')({
+          stage: 3,
+          preserve: false,
+          browsers: pkg.browserslist,
+          // features: {
+          //   'nesting-rules': true,
+          //   'custom-media-queries': true,
+          //   'custom-selectors': true,
+          //   'color-mod-function': {
+          //     unresolved: 'warn',
+          //   },
+          // },
+        }),
+      ],
+    },
+  },
+})
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
@@ -33,10 +58,10 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
+        preprocess,
       }),
       resolve(),
       commonjs(),
-
       legacy &&
         babel({
           extensions: ['.js', '.html'],
@@ -80,6 +105,7 @@ export default {
       svelte({
         generate: 'ssr',
         dev,
+        preprocess,
       }),
       resolve(),
       commonjs(),
