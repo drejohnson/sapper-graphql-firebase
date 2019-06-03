@@ -1,7 +1,7 @@
 HASH := `git rev-parse --short HEAD`
 
-SERVICE := phreshr-site
-PROJECT := phreshr-app
+SERVICE := your-service
+PROJECT := your-project
 
 IMAGE := gcr.io/$(PROJECT)/$(SERVICE):$(HASH)
 
