@@ -21,6 +21,7 @@
 - Repo was set up using my personal Hasura and Firebase configurations which is not included. So some setup is required for this repo to work for you.
 - You will need to edit the `.env` file to add your credentials
 - You also need to update the graphql directory with your own queries and mutations
+- To run/test in docker locally run `docker run -p 3000:3000 -it <IMAGE> sh`. e.g. `docker run -p 3000:3000 -it gcr.io/your_project/your_service:54bxr7g9 sh`, then from inside image run `node __sapper__/build`. Now open browser to `localhost:3000`
 
 ## Deploy
 
