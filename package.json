@@ -50,5 +50,10 @@
     "sapper": "^0.27.1",
     "svelte": "^3.4.4",
     "svelte-preprocess": "^2.11.0"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "Firefox ESR",
+    "not ie <= 11"
+  ]
 }
