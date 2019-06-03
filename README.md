@@ -8,7 +8,6 @@
 - [x] [Sapper](https://sapper.svelte.dev/)
 - [x] [GraphQL via Hasura's graphql-engine](https://github.com/hasura/graphql-engine/)
 - [x] [Authentication via Firebase Auth](https://firebase.google.com/products/auth/)
-- [x] [Adapted to work with Zeit Now v2](https://zeit.co/docs/v2/getting-started/introduction-to-now/)
 - [x] [Uses Service Worker to Cache GraphQL Request](https://medium.com/@jono/cache-graphql-post-requests-with-service-worker-100a822a388a)
 
 ## Quick start
@@ -25,9 +24,10 @@
 
 ## Deploy
 
-- Uses [now-sapper](https://github.com/thgh/now-sapper)
-- To deploy on Now v2: run `yarn deploy` or `npm run deploy`,
+- Uses [Cloud Run](https://cloud.google.com/run/)
+- To deploy on Cloud Run: run `yarn deploy` or `npm run deploy`,
 
 ## TODO
 
+- [ ] Add [svelte-apollo](https://github.com/timhall/svelte-apollo)
 - [ ] Add [TypeScript](https://github.com/Microsoft/TypeScript) when supported
