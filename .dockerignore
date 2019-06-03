@@ -1,0 +1,10 @@
+/*
+!/Dockerfile
+!/package.json
+!/package-lock.json
+!/yarn.lock
+!/__sapper__
+/__sapper__/*
+!/__sapper__/build
+!/static
+/functions/
