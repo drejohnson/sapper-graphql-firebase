@@ -25,7 +25,6 @@ const preprocess = autoPreprocess({
         require('postcss-preset-env')({
           stage: 3,
           preserve: false,
-          browsers: pkg.browserslist,
           // features: {
           //   'nesting-rules': true,
           //   'custom-media-queries': true,
