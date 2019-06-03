@@ -1,32 +1,31 @@
 {
   "name": "phreshr-ui-svelte",
   "description": "Svelte + Sapper + Graphql + Firebase Auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",
     "export": "sapper export",
     "start": "node __sapper__/build",
-    "predeploy": "yarn build",
-    "deploy": "now",
+    "deploy": "make deploy",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
-    "@firebase/app": "^0.4.1",
+    "@firebase/app": "^0.4.3",
     "@firebase/auth": "^0.11.2",
     "compression": "^1.7.4",
     "crypto-js": "^3.1.9-1",
     "dotenv": "^8.0.0",
-    "firebase": "^6.0.2",
+    "firebase": "^6.1.0",
     "idb-keyval": "^3.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "json2mq": "^0.2.0",
     "polka": "^0.5.2",
-    "rxfire": "^3.4.6",
+    "rxfire": "^3.5.0",
     "rxjs": "^6.5.2",
-    "sirv": "^0.4.0"
+    "sirv": "^0.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -34,16 +33,22 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/runtime": "^7.4.4",
-    "eslint-plugin-svelte3": "^1.2.0",
-    "rollup": "~1.11.3",
+    "eslint-plugin-svelte3": "^1.2.3",
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.16",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.6.0",
+    "rollup": "^1.12.4",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^4.0.4",
-    "sapper": "^0.27.0",
-    "svelte": "^3.4.0"
+    "rollup-plugin-terser": "^5.0.0",
+    "sapper": "^0.27.1",
+    "svelte": "^3.4.4",
+    "svelte-preprocess": "^2.11.0"
   }
 }
