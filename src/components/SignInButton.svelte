@@ -1,5 +1,5 @@
 <script>
-  import { signInWithFacebook, signInWithGoogle } from '../firebase/auth'
+  import { signInWithFacebook, signInWithGoogle } from '../firebase'
 
   export let provider
 </script>
