@@ -1,6 +1,6 @@
-import { of } from 'rxjs'
+// import { of } from 'rxjs'
 import { fromFetch } from 'rxjs/fetch'
-import { switchMap, startWith, catchError } from 'rxjs/operators'
+import { switchMap, catchError } from 'rxjs/operators'
 
 import { extractFiles } from 'extract-files'
 import fnv1a from '@sindresorhus/fnv1a'
