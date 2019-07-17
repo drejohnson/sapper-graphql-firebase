@@ -25,12 +25,14 @@
     "idb-keyval": "^3.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "json2mq": "^0.2.0",
-    "polka": "^0.5.2",
+    "polka": "^1.0.0-next.4",
     "rxfire": "^3.6.5",
     "rxjs": "^6.5.2",
     "sirv": "^0.4.2"
   },
   "devDependencies": {
+    "@polka/redirect": "^1.0.0-next.3",
+    "@polka/send": "^1.0.0-next.3",
     "@babel/core": "^7.5.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.5.0",

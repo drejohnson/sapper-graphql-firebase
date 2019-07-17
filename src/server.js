@@ -5,14 +5,20 @@ import polka from 'polka'
 import compression from 'compression'
 import * as sapper from '@sapper/server'
 
-const { PORT = 3000 } = process.env
+const { PORT = 3000, NODE_ENV } = process.env
+const dev = NODE_ENV === 'development'
 
-polka() // You can also use Express
+const app = polka() // You can also use Express
   .use(
     compression({ threshold: 0 }),
     sirv('static', { dev: process.env.NODE_ENV === 'development' }),
     sapper.middleware(),
   )
-  .listen(PORT, err => {
+
+export default app
+
+if (dev) {
+  app.listen(PORT, err => {
     if (err) console.log('error', err)
   })
+}
