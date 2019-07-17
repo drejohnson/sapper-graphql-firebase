@@ -6,6 +6,7 @@
 
 - [x] [Svelte](https://svelte.dev/)
 - [x] [Sapper](https://sapper.svelte.dev/)
+- [x] [RxJS](https://rxjs.dev/)
 - [x] [GraphQL via Hasura's graphql-engine](https://github.com/hasura/graphql-engine/)
 - [x] [Authentication via Firebase Auth](https://firebase.google.com/products/auth/)
 - [x] [Uses Service Worker to Cache GraphQL Request](https://medium.com/@jono/cache-graphql-post-requests-with-service-worker-100a822a388a)
@@ -30,5 +31,5 @@
 
 ## TODO
 
-- [ ] Add [svelte-apollo](https://github.com/timhall/svelte-apollo)
+- [ ] Move the `src/svql` directory into it's own repo and publish as a lightweight graphql client for `svelte` on npm
 - [ ] Add [TypeScript](https://github.com/Microsoft/TypeScript) when supported
