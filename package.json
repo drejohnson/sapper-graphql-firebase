@@ -15,9 +15,12 @@
   "dependencies": {
     "@firebase/app": "^0.4.10",
     "@firebase/auth": "^0.11.4",
+    "@sindresorhus/fnv1a": "^1.2.0",
+    "abort-controller": "^3.0.0",
     "compression": "^1.7.4",
     "crypto-js": "^3.1.9-1",
     "dotenv": "^8.0.0",
+    "extract-files": "^5.0.1",
     "firebase": "^6.3.0",
     "idb-keyval": "^3.2.0",
     "isomorphic-unfetch": "^3.0.0",

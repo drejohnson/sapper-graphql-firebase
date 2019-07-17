@@ -5,6 +5,12 @@
   import SignInButton from './SignInButton.svelte'
 </script>
 
+<style>
+  section {
+    margin-bottom: 1rem;
+  }
+</style>
+
 <section>
   {#if $authStore.status === 'in'}
     <Profile {...$authStore.user} />

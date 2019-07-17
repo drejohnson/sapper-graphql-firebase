@@ -1,20 +1,22 @@
 <script context="module">
-  import { store } from '../stores/graphql'
+  import { get } from 'svelte/store'
+  import client from '../graphql/client'
+  import { ARTICLES_QUERY } from '../graphql/queries/article'
 
   export async function preload() {
-    return { store }
+    const posts = await client.query(ARTICLES_QUERY)
+    return {
+      posts,
+    }
   }
 </script>
 
 <script>
-  // import { FEATURED_QUERY } from '../graphql/queries/featured'
-  // import Featured from '../components/Featured.svelte'
+  import Post from '../components/Post.svelte'
   import Login from '../components/Login.svelte'
 
-  // store.useQuery(FEATURED_QUERY)
+  export let posts
 </script>
-
-<!--  -->
 
 <svelte:head>
   <title>{process.env.APP_NAME}</title>
@@ -24,4 +26,5 @@
 <h1>Home</h1>
 
 <Login />
-<!-- <Featured data={$store} /> -->
+
+<Post {posts} />
