@@ -3,16 +3,22 @@ import { map, tap } from 'rxjs/operators'
 import { authListener } from './auth'
 import { config } from './config'
 
-function lazyLoad() {
+export function lazyLoad() {
   // create observable from dynamic import
-  const app$ = from(import('firebase/app'))
+  const firebase$ = from(import('firebase/app'))
   const auth$ = from(import('firebase/auth'))
-  // when all observables, e.g (app$, auth$), complete, give the last emitted value from each as an array
-  return forkJoin(app$, auth$).pipe(
+
+  // uncomment to use
+  // const firestore$ = from(import('firebase/firestore'))
+
+  // when all observables, e.g (firebase$, auth$), complete, give the last emitted value from each as an array
+
+  // To use firestore add firestore$ to forkJoin
+  return forkJoin(firebase$, auth$).pipe(
     // apply transform to array emitted from forkJoin to return Firebase instance
-    map(([firebase]) => {
-      const app = { ...firebase.default }
-      return app
+    map(([firebase$]) => {
+      const firebase = firebase$.default
+      return { firebase }
     }),
   )
 }
@@ -23,16 +29,15 @@ const firebaseApp$ = new ReplaySubject(1)
 lazyLoad()
   .pipe(
     // perform side-effect to initialize auth listener
-    tap(firebase => {
+    tap(load => {
+      const { firebase } = load
       const app = firebase.initializeApp(config)
       authListener(app)
     }),
   )
-  .subscribe(app => {
-    firebaseApp$.next(app)
+  .subscribe(load => {
+    const { firebase } = load
+    firebaseApp$.next(firebase)
   })
-
-// create observable from subject
-firebaseApp$.asObservable()
 
 export { firebaseApp$ }
