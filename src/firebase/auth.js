@@ -36,7 +36,6 @@ export const signInWithGoogle = firebaseApp => ({ redirect = false }) => {
       redirect === true
         ? await app.auth().signInWithRedirect(authProvider)
         : await app.auth().signInWithPopup(authProvider)
-      redirectAfterLogin()
     } catch (error) {
       /* eslint-disable no-console */
       console.log(error)
